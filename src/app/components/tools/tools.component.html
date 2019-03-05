@@ -1,146 +1,138 @@
 <mat-grid-list cols="3">
-    <mat-grid-tile rowspan="2">
-      <mat-card>
-        <img mat-card-image src="assets/me.png" />
+  <mat-grid-tile rowspan="2">
+    <mat-card>
+      <img mat-card-image src="assets/me.png" />
+      <mat-card-content>
+        <p>
+          Full Stack Developer
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </mat-grid-tile>
+
+  <mat-grid-tile
+    [@flip]="angularFlipped"
+    [@swing]="angularHover"
+    (mouseenter)="hoverTool('angularHover')"
+    (mouseleave)="unhoverTool('angularHover', 'angularFlipped')"
+    (click)="flipTool('angularFlipped')"
+    [ngStyle]="{ 'z-index': angularFlipped ? 2 : 1 }"
+  >
+    <mat-card tabindex="0">
+      <mat-card-header>
+        <mat-card-title>Angular</mat-card-title>
+      </mat-card-header>
+      <ng-container *ngIf="!angularFlipped">
+        <img mat-card-image src="assets/angular-logo.png" />
+      </ng-container>
+
+      <ng-container *ngIf="angularFlipped">
         <mat-card-content>
           <p>
-            Full Stack Developer
+            Angular is a TypeScript-based open-source full-stack web application
+            framework led by the Angular Team at Google and by a community of
+            individuals and corporations. Angular is a complete rewrite from the
+            same team that built AngularJS.
           </p>
         </mat-card-content>
-      </mat-card>
-    </mat-grid-tile>
+      </ng-container>
+      <mat-card-footer>
+        <mat-progress-bar value="70"> </mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
 
-    <mat-grid-tile
-      [@flip]="angularFlipped"
-      [@swing]="angularHover"
-      (mouseenter)="hoverTool('angularHover')"
-      (mouseleave)="unhoverTool('angularHover', 'angularFlipped')"
-      (click)="flipTool('angularFlipped')"
-      [ngStyle]="{ 'z-index': angularFlipped ? 2 : 1 }"
-    >
-      <mat-card>
-        <ng-container *ngIf="!angularFlipped">
-          <img mat-card-image src="assets/angular-logo.png" />
-          <mat-card-content>
-            <p>
-              Angular
-            </p>
-          </mat-card-content>
-        </ng-container>
+  <mat-grid-tile
+    [@flip]="nodejsFlipped"
+    [@swing]="nodejsHover"
+    (mouseenter)="hoverTool('nodejsHover')"
+    (mouseleave)="unhoverTool('nodejsHover', 'nodejsFlipped')"
+    (click)="flipTool('nodejsFlipped')"
+    [ngStyle]="{ 'z-index': nodejsFlipped ? 2 : 1 }"
+  >
+    <mat-card tabindex="0">
+      <mat-card-header>
+        <mat-card-title>NodeJS</mat-card-title>
+      </mat-card-header>
+      <ng-container *ngIf="!nodejsFlipped">
+        <img mat-card-image src="assets/nodejs-logo.png" />
+      </ng-container>
 
-        <ng-container *ngIf="angularFlipped">
-          <mat-card-content>
-            <p>
-              Angular is a TypeScript-based open-source full-stack web
-              application framework led by the Angular Team at Google and by a
-              community of individuals and corporations. Angular is a complete
-              rewrite from the same team that built AngularJS.
-            </p>
-          </mat-card-content>
-        </ng-container>
-        <mat-card-footer>
-          <mat-progress-bar value="70"> </mat-progress-bar>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
+      <ng-container *ngIf="nodejsFlipped">
+        <mat-card-content>
+          <p>
+            Node.js is an open-source, cross-platform JavaScript run-time
+            environment that executes JavaScript code outside of a browser.
+          </p>
+        </mat-card-content>
+      </ng-container>
+      <mat-card-footer>
+        <mat-progress-bar value="40"> </mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
 
-    <mat-grid-tile
-      [@flip]="nodejsFlipped"
-      [@swing]="nodejsHover"
-      (mouseenter)="hoverTool('nodejsHover')"
-      (mouseleave)="unhoverTool('nodejsHover', 'nodejsFlipped')"
-      (click)="flipTool('nodejsFlipped')"
-      [ngStyle]="{ 'z-index': nodejsFlipped ? 2 : 1 }"
-    >
-      <mat-card>
-        <ng-container *ngIf="!nodejsFlipped">
-          <img mat-card-image src="assets/nodejs-logo.png" />
-          <mat-card-content>
-            <p>
-              NodeJS
-            </p>
-          </mat-card-content>
-        </ng-container>
+  <mat-grid-tile
+    [@flip]="graphqlFlipped"
+    [@swing]="graphqlHover"
+    (mouseenter)="hoverTool('graphqlHover')"
+    (mouseleave)="unhoverTool('graphqlHover', 'graphqlFlipped')"
+    (click)="flipTool('graphqlFlipped')"
+    [ngStyle]="{ 'z-index': graphqlFlipped ? 2 : 1 }"
+  >
+    <mat-card tabindex="0">
+      <mat-card-header>
+        <mat-card-title>GraphQL</mat-card-title>
+      </mat-card-header>
+      <ng-container *ngIf="!graphqlFlipped">
+        <img mat-card-image src="assets/graphql-logo.png" />
+      </ng-container>
 
-        <ng-container *ngIf="nodejsFlipped">
-          <mat-card-content>
-            <p>
-              Node.js is an open-source, cross-platform JavaScript run-time
-              environment that executes JavaScript code outside of a browser.
-            </p>
-          </mat-card-content>
-        </ng-container>
-        <mat-card-footer>
-          <mat-progress-bar value="40"> </mat-progress-bar>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
+      <ng-container *ngIf="graphqlFlipped">
+        <mat-card-content>
+          <p>
+            GraphQL is an open-source data query and manipulation language for
+            APIs, and a runtime for fulfilling queries with existing data.
+            GraphQL was developed internally by Facebook in 2012 before being
+            publicly released in 2015.
+          </p>
+        </mat-card-content>
+      </ng-container>
+      <mat-card-footer>
+        <mat-progress-bar value="30"> </mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
 
-    <mat-grid-tile
-      [@flip]="graphqlFlipped"
-      [@swing]="graphqlHover"
-      (mouseenter)="hoverTool('graphqlHover')"
-      (mouseleave)="unhoverTool('graphqlHover', 'graphqlFlipped')"
-      (click)="flipTool('graphqlFlipped')"
-      [ngStyle]="{ 'z-index': graphqlFlipped ? 2 : 1 }"
-    >
-      <mat-card>
-        <ng-container *ngIf="!graphqlFlipped">
-          <img mat-card-image src="assets/graphql-logo.png" />
-          <mat-card-content>
-            <p>
-              GraphQL
-            </p>
-          </mat-card-content>
-        </ng-container>
+  <mat-grid-tile
+    [@flip]="mongodbFlipped"
+    [@swing]="mongodbHover"
+    (mouseenter)="hoverTool('mongodbHover')"
+    (mouseleave)="unhoverTool('mongodbHover', 'mongodbFlipped')"
+    (click)="flipTool('mongodbFlipped')"
+    [ngStyle]="{ 'z-index': mongodbFlipped ? 2 : 1 }"
+  >
+    <mat-card tabindex="0">
+      <mat-card-header>
+        <mat-card-title>MongoDB</mat-card-title>
+      </mat-card-header>
+      <ng-container *ngIf="!mongodbFlipped">
+        <img mat-card-image src="assets/mongodb-logo.png" />
+      </ng-container>
 
-        <ng-container *ngIf="graphqlFlipped">
-          <mat-card-content>
-            <p>
-              GraphQL is an open-source data query and manipulation language for
-              APIs, and a runtime for fulfilling queries with existing data.
-              GraphQL was developed internally by Facebook in 2012 before being
-              publicly released in 2015.
-            </p>
-          </mat-card-content>
-        </ng-container>
-        <mat-card-footer>
-          <mat-progress-bar value="30"> </mat-progress-bar>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-
-    <mat-grid-tile
-      [@flip]="mongodbFlipped"
-      [@swing]="mongodbHover"
-      (mouseenter)="hoverTool('mongodbHover')"
-      (mouseleave)="unhoverTool('mongodbHover', 'mongodbFlipped')"
-      (click)="flipTool('mongodbFlipped')"
-      [ngStyle]="{ 'z-index': mongodbFlipped ? 2 : 1 }"
-    >
-      <mat-card>
-        <ng-container *ngIf="!mongodbFlipped">
-          <img mat-card-image src="assets/mongodb-logo.png" />
-          <mat-card-content>
-            <p>
-              MongoDB
-            </p>
-          </mat-card-content>
-        </ng-container>
-
-        <ng-container *ngIf="mongodbFlipped">
-          <mat-card-content>
-            <p>
-              MongoDB is a cross-platform document-oriented database program.
-              Classified as a NoSQL database program, MongoDB uses JSON-like
-              documents with schemata. MongoDB is developed by MongoDB Inc. and
-              licensed under the Server Side Public License.
-            </p>
-          </mat-card-content>
-        </ng-container>
-        <mat-card-footer>
-          <mat-progress-bar value="30"> </mat-progress-bar>
-        </mat-card-footer>
-      </mat-card>
-    </mat-grid-tile>
-  </mat-grid-list>
+      <ng-container *ngIf="mongodbFlipped">
+        <mat-card-content>
+          <p>
+            MongoDB is a cross-platform document-oriented database program.
+            Classified as a NoSQL database program, MongoDB uses JSON-like
+            documents with schemata. MongoDB is developed by MongoDB Inc. and
+            licensed under the Server Side Public License.
+          </p>
+        </mat-card-content>
+      </ng-container>
+      <mat-card-footer>
+        <mat-progress-bar value="30"> </mat-progress-bar>
+      </mat-card-footer>
+    </mat-card>
+  </mat-grid-tile>
+</mat-grid-list>
